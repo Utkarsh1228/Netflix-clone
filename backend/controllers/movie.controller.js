@@ -1,8 +1,9 @@
+import { ENV_VARS } from "../config/envVars.js";
 import { fetchFromTMDB } from "../services/tmdb.service.js";
 
 const headers = {
 	accept: 'application/json',
-	Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzNGZjYmMwZGU4OTdlZmYxY2IwZjIwNDE3NmRhYzkzOCIsIm5iZiI6MTcyNjkwNzU1Mi4xNTkxNjksInN1YiI6IjY2Y2IxYzg4OGMyZmQxNzc1NzFkNWM0OCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.jHQzZo97BryQ5Q2FTx5tkjdaM9kQJjOqqRufUBB-ros'
+	Authorization: 'Bearer ' + ENV_VARS.TMDB_API_KEY
 }
 
 export async function getTrendingMovie(req, res) {
